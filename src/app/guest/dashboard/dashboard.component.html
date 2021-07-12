@@ -1,0 +1,155 @@
+<div>
+    <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    My Profile
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{panelOpenState ? 'Close' : 'View'}} &nbsp;&nbsp;
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <p style="width: 20cm;">
+                <mat-list>
+                    <mat-list-item>FirstName LastName
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    </mat-list-item>
+
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Male/Female
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    </mat-list-item>
+
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Email.com
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    </mat-list-item>
+
+                    <mat-divider></mat-divider>
+
+                    <mat-list-item>Mobile
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    </mat-list-item>
+                </mat-list>
+            </p>
+
+            <p style="float: left;">
+
+                <button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+                    Pending
+                </button>&nbsp;&nbsp;&nbsp;
+
+                <button mat-raised-button color="primary" matBadge="3" matBadgePosition="before" matBadgeColor="accent">
+                    Updates
+                </button>&nbsp;&nbsp;&nbsp;
+
+
+            </p>
+
+
+            <p style="float: right;">Notify me <mat-slide-toggle>Mobile</mat-slide-toggle>
+                <mat-slide-toggle>Email</mat-slide-toggle>
+            </p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<div style="padding-top: 1cm;">
+
+</div>
+
+
+<div id="block_container">
+    <div id="bloc1">
+        <mat-card class="example-card" style="height: 5cm;width: 10cm;padding-left: 1cm">
+            <mat-card-header>
+                <mat-card-title>Career</mat-card-title>
+                <mat-card-subtitle>explore oppourtinities inside Orient</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://media.istockphoto.com/photos/kids-building-sandcastles-picture-id615889416"
+                alt="">
+            <mat-card-content>
+                <p>
+                    This is the place to learn and grow with your skills and exploring new orppournities inside our
+                    nework </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="accent">Explore</button>
+                <button mat-button color="accent">Share</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+
+
+    <div id="bloc2">
+        <mat-card class="example-card" style="height: 5cm;width: 10cm;padding-left: 1cm">
+            <mat-card-header>
+                <mat-card-title>Business</mat-card-title>
+                <mat-card-subtitle>exploring business oppourtinities</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image
+                src="https://media.istockphoto.com/photos/luxury-house-with-swimming-pool-and-terrace-near-lawn-in-modern-picture-id873886294?s=612x612"
+                alt="">
+            <mat-card-content>
+                <p>
+                    Lets Check out yhe business solutions we have ready for you </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="accent">Explore</button>
+                <button mat-button color="accent">Share</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+
+
+    <div id="bloc3">
+        <mat-card class="example-card" style="height: 5cm;width: 10cm;padding-left: 1cm">
+            <mat-card-header>
+                <mat-card-title>TaskApp</mat-card-title>
+                <mat-card-subtitle>Create and manages tasks</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image
+                src="https://media.istockphoto.com/photos/smiling-indian-female-employee-using-laptop-at-workplace-picture-id1083827686?s=612x612"
+                alt="">
+            <mat-card-content>
+                <p>Allows you to use this product for free for creating and managing yor own tasks
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="accent">Explore</button>
+                <button mat-button color="accent">Share</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+
+
+
+</div>
+
+
+<div style="padding-top: 7cm;">
+
+</div>
+
+
+<div>
+    <mat-accordion>
+
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Self aware panel
+                </mat-panel-title>
+                <mat-panel-description>
+                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

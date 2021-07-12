@@ -1,0 +1,15 @@
+#block_container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  #block_container_right {
+    display: flex;
+    justify-content: right;
+  }
+
+  #block_container_left {
+    display: flex;
+    justify-content: left;
+  }
