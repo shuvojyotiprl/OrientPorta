@@ -13,3 +13,10 @@
     display: flex;
     justify-content: left;
   }
+
+  #img_block{
+    width: 8cm;
+    height: 4cm;
+    padding-right: 1cm;
+    padding-right: 1cm;
+  }

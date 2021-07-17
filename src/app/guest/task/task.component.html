@@ -1,1 +1,305 @@
-<p>task works!</p>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+
+
+        <mat-accordion>
+
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <button mat-button color="primary">Create Task</button>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <!--SHUVO Start-->
+
+                <mat-stepper [linear]="isLinear" #stepper>
+
+
+                    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+                        <form [formGroup]="firstFormGroup">
+                            <ng-template matStepLabel>Task Details</ng-template>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>Task Name</mat-label>
+                                <input matInput formControlName="firstCtrl" placeholder="Task Name" required>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>Description</mat-label>
+                                <input matInput formControlName="firstCtrl" placeholder="description" required>
+                            </mat-form-field>
+                            <div>
+
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Priority</mat-label>
+                                    <mat-select>
+                                        <mat-option value="one">HIGH</mat-option>
+                                        <mat-option value="two">MEDIUM</mat-option>
+                                        <mat-option value="two">LOW</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <button mat-button matStepperNext color="primary">Next</button>
+                            </div>
+                        </form>
+                    </mat-step>
+
+
+
+                    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+                        <form [formGroup]="secondFormGroup">
+                            <ng-template matStepLabel>Complete By</ng-template>
+
+                            <mat-form-field appearance="fill">
+                                <mat-label>Date</mat-label>
+                                <input matInput [matDatepicker]="picker">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="fill" style="width: 2cm;">
+                                <mat-label>Hour</mat-label>
+                                <mat-select>
+                                    <mat-option value="00">00</mat-option>
+                                    <mat-option value="01">01</mat-option>
+                                    <mat-option value="02">02</mat-option>
+                                    <mat-option value="03">03</mat-option>
+                                    <mat-option value="04">04</mat-option>
+                                    <mat-option value="05">05</mat-option>
+                                    <mat-option value="06">06</mat-option>
+                                    <mat-option value="07">07</mat-option>
+                                    <mat-option value="08">08</mat-option>
+                                    <mat-option value="09">09</mat-option>
+                                    <mat-option value="10">10</mat-option>
+                                    <mat-option value="11">11</mat-option>
+                                    <mat-option value="12">12</mat-option>
+                                </mat-select>
+                            </mat-form-field>&nbsp;&nbsp;&nbsp;
+
+                            <mat-form-field appearance="fill" style="width: 2cm;">
+                                <mat-label>Minute</mat-label>
+                                <mat-select>
+
+                                    <mat-option value="00">00</mat-option>
+                                    <mat-option value="15">15</mat-option>
+                                    <mat-option value="30">30</mat-option>
+                                    <mat-option value="45">45</mat-option>
+
+
+                                </mat-select>
+                            </mat-form-field>&nbsp;&nbsp;&nbsp;
+
+                            <mat-form-field appearance="fill" style="width: 2cm;">
+                                <mat-label>Zone</mat-label>
+                                <mat-select>
+
+                                    <mat-option value="AM">AM</mat-option>
+                                    <mat-option value="PM">PM</mat-option>
+
+
+
+                                </mat-select>
+                            </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <div>
+                                <mat-form-field appearance="fill" style="width: 3cm;">
+                                    <mat-label>Type</mat-label>
+                                    <mat-select>
+
+                                        <mat-option value="personal">personal</mat-option>
+                                        <mat-option value="professional">professional</mat-option>
+                                        <mat-option value="other">others</mat-option>
+
+
+
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+
+                            <div>
+                                <button mat-button matStepperPrevious color="primary">Back</button>
+                                <button mat-button color="accent" (click)="stepper.reset()">Reset</button>
+                                <button mat-raised-button matStepperNext color="primary">Submit</button>
+                            </div>
+                        </form>
+
+
+                    </mat-step>
+
+
+
+                    <mat-step>
+                        <ng-template matStepLabel>Done</ng-template>
+
+                        <div>
+                            <mat-list>
+
+                                <mat-list>
+
+                                    <mat-list-item>Task Id : 1221</mat-list-item>
+                                    <mat-divider></mat-divider>
+                                    <mat-list-item>Remaining time : 3 h
+
+                                    </mat-list-item>
+                                    <mat-divider></mat-divider>
+
+                                </mat-list>
+
+                                <div style="padding-top: 1cm;">
+                                    <button mat-button color="primary">
+                                        <mat-icon>remove_red_eye</mat-icon>view
+                                    </button>
+                                    <button mat-button color="primary">
+                                        <mat-icon>home</mat-icon>home
+                                    </button>
+                                </div>
+                            </mat-list>
+
+                        </div>
+                    </mat-step>
+
+
+
+                </mat-stepper>
+
+                <!--SHUVO-->
+
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <button mat-button color="primary">View Task</button>
+                    </mat-panel-title>
+
+                </mat-expansion-panel-header>
+
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>task name</mat-label>
+                        <input type="search" matInput>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field appearance="fill">
+                        <mat-label>task id</mat-label>
+                        <input type="search" matInput>
+                    </mat-form-field>
+                </p>
+
+                <button mat-raised-button color="primary">Search</button>
+            </mat-expansion-panel>
+
+
+
+        </mat-accordion>
+
+
+
+
+
+
+
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+
+
+        <div class="example-container mat-elevation-z8" style="width: 13cm;">
+
+            <mat-table [dataSource]="dataSource" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="progress">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+                </ng-container>
+
+                <!-- Color Column -->
+                <ng-container matColumnDef="color">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
+                    <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+                </ng-container>
+
+
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;">
+                </mat-row>
+            </mat-table>
+
+            <mat-paginator [length]="5" [pageSize]="5" [pageSizeOptions]="[1,2,4,5]"></mat-paginator>
+        </div>
+
+
+        <!-- Copyright 2018 Google Inc. All Rights Reserved.
+              Use of this source code is governed by an MIT-style license that
+              can be found in the LICENSE file at http://angular.io/license -->
+
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<div style="padding-top:2cm;">
+    <br>
+</div>
+<mat-divider></mat-divider>
+
+<mat-grid-list cols="1" rowHeight="3:1">
+
+
+    <mat-grid-tile>
+        <p>Task Detail</p>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<mat-divider></mat-divider>
+
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+
+        <mat-list>
+
+            <mat-list-item>Overdue Task1</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Overdue Task 2</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Overdue Task 3</mat-list-item>
+        </mat-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+        <mat-list>
+
+            <mat-list-item>Graph 1</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Graph 2</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>Graph 3</mat-list-item>
+        </mat-list>
+    </mat-grid-tile>
+
+
+
+</mat-grid-list>
+
+<mat-divider></mat-divider>

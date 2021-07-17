@@ -9,7 +9,6 @@ import { ServiceComponent } from './service/service.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { TaskappComponent } from './taskapp/taskapp.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { ResetComponent } from './authentication/reset/reset.component';
@@ -32,7 +31,6 @@ import { TaskComponent } from './guest/task/task.component';
     AuthenticationComponent,
     HeaderComponent,
     FooterComponent,
-    TaskappComponent,
     LoginComponent,
     SignupComponent,
     ResetComponent,

@@ -4,36 +4,100 @@
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    My Profile
+                    <button mat-button color="accent" id="block_container_right">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">perm_identity</mat-icon>
+                    </button>
                 </mat-panel-title>
                 <mat-panel-description>
-                    {{panelOpenState ? 'Close' : 'View'}} &nbsp;&nbsp;
+                    {{panelOpenState ? 'Close' : ''}} &nbsp;&nbsp;
                 </mat-panel-description>
             </mat-expansion-panel-header>
 
             <p style="width: 20cm;">
                 <mat-list>
-                    <mat-list-item>FirstName LastName
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    <mat-list-item>FirstName LastName &nbsp;&nbsp;
+                        <button mat-button color="accent" id="block_container_right">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="editName()">edit
+                            </mat-icon>
+                        </button>
+                        <p *ngIf="enableEditName">
+                            <mat-form-field appearance="standard">
+                                <mat-label>First Name</mat-label>
+                                <input matInput placeholder="Placeholder">
+                            </mat-form-field>
+                        </p> &nbsp;&nbsp;<p *ngIf="enableEditName">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput placeholder="Placeholder">
+                            </mat-form-field>
+                        </p>
                     </mat-list-item>
 
                     <mat-divider></mat-divider>
-                    <mat-list-item>Male/Female
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    <mat-list-item>Male/Female &nbsp;&nbsp;
+                        <button mat-button color="accent" id="block_container_right">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="editGender()">edit
+                            </mat-icon>
+                        </button>
+                        <mat-form-field *ngIf="enableEditGender">
+                            <mat-label>Select</mat-label>
+                            <mat-select>
+                                <mat-option value="one">Male</mat-option>
+                                <mat-option value="two">Female</mat-option>
+                                <mat-option value="two">Other</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
                     </mat-list-item>
 
                     <mat-divider></mat-divider>
-                    <mat-list-item>Email.com
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+
+                    <mat-list-item>Email.com &nbsp;&nbsp;
+                        <button mat-button color="accent" id="block_container_right">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="editEmail()">edit
+                            </mat-icon>
+                        </button>
+                        <div class="example-container" style="padding-top: 1cm;padding-bottom: 1cm;"
+                            *ngIf="enableEditEmail">
+                            <mat-form-field>
+                                <mat-label> email</mat-label>
+                                <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                                <!--  <mat-error *ngIf="email.invalid" >{{getErrorMessage()}}</mat-error> -->
+                            </mat-form-field>
+                        </div>
                     </mat-list-item>
 
                     <mat-divider></mat-divider>
 
-                    <mat-list-item>Mobile
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+                    <mat-list-item>Mobile &nbsp;&nbsp;
+                        <button mat-button color="accent" id="block_container_right">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="editMobile()">edit
+                            </mat-icon>
+                        </button>
+
+                        &nbsp;&nbsp;<p *ngIf="enableEditPhone">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Mobile</mat-label>
+                                <input matInput placeholder="Placeholder">
+                            </mat-form-field>
+                        </p>
                     </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <div style="padding-top: 1cm;">
+
+                    </div>
+
+                    <button mat-raised-button color="accent" matBadgePosition="before" matBadgeColor="accent"
+                        style="float: right;">
+                        Save
+                    </button>&nbsp;&nbsp;&nbsp;
+
+
                 </mat-list>
             </p>
+            <div style="padding-top: 1cm;">
+
+            </div>
 
             <p style="float: left;">
 
@@ -49,7 +113,7 @@
             </p>
 
 
-            <p style="float: right;">Notify me <mat-slide-toggle>Mobile</mat-slide-toggle>
+            <p style="float: right;">Notify me &nbsp;&nbsp;&nbsp;&nbsp; <mat-slide-toggle>Mobile</mat-slide-toggle>
                 <mat-slide-toggle>Email</mat-slide-toggle>
             </p>
         </mat-expansion-panel>
@@ -62,30 +126,11 @@
 
 
 <div id="block_container">
-    <div id="bloc1">
-        <mat-card class="example-card" style="height: 5cm;width: 10cm;padding-left: 1cm">
-            <mat-card-header>
-                <mat-card-title>Career</mat-card-title>
-                <mat-card-subtitle>explore oppourtinities inside Orient</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="https://media.istockphoto.com/photos/kids-building-sandcastles-picture-id615889416"
-                alt="">
-            <mat-card-content>
-                <p>
-                    This is the place to learn and grow with your skills and exploring new orppournities inside our
-                    nework </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button color="accent">Explore</button>
-                <button mat-button color="accent">Share</button>
-            </mat-card-actions>
-        </mat-card>
-
-    </div>
+    
 
 
     <div id="bloc2">
-        <mat-card class="example-card" style="height: 5cm;width: 10cm;padding-left: 1cm">
+        <mat-card class="example-card" id="img_block">
             <mat-card-header>
                 <mat-card-title>Business</mat-card-title>
                 <mat-card-subtitle>exploring business oppourtinities</mat-card-subtitle>
@@ -107,7 +152,7 @@
 
 
     <div id="bloc3">
-        <mat-card class="example-card" style="height: 5cm;width: 10cm;padding-left: 1cm">
+        <mat-card class="example-card" id="img_block">
             <mat-card-header>
                 <mat-card-title>TaskApp</mat-card-title>
                 <mat-card-subtitle>Create and manages tasks</mat-card-subtitle>
@@ -118,6 +163,47 @@
             <mat-card-content>
                 <p>Allows you to use this product for free for creating and managing yor own tasks
                 </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="accent" (click)="navigateTaskApp()">Explore</button>
+                <button mat-button color="accent">Share</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+
+    <div id="bloc4">
+        <mat-card class="example-card" id="img_block">
+            <mat-card-header>
+                <mat-card-title>Events</mat-card-title>
+                <mat-card-subtitle>Attend Upcoming Seminars</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image
+                src="https://media.istockphoto.com/photos/business-concepts-picture-id1071488226?s=612x612"
+                alt="">
+            <mat-card-content>
+                <p>View upcoming seminars and book your slot, this wil helpful for you to understand our value and culture
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="accent">Explore</button>
+                <button mat-button color="accent">Share</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+    <div id="bloc1">
+        <mat-card class="example-card" id="img_block">
+            <mat-card-header>
+                <mat-card-title>Career</mat-card-title>
+                <mat-card-subtitle>explore oppourtinities </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://media.istockphoto.com/photos/kids-building-sandcastles-picture-id615889416"
+                alt="">
+            <mat-card-content>
+                <p>
+                    This is the place to learn and grow with your skills and exploring new orppournities inside our
+                    nework </p>
             </mat-card-content>
             <mat-card-actions>
                 <button mat-button color="accent">Explore</button>
@@ -137,19 +223,3 @@
 </div>
 
 
-<div>
-    <mat-accordion>
-
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Self aware panel
-                </mat-panel-title>
-                <mat-panel-description>
-                    Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-    </mat-accordion>
-</div>
